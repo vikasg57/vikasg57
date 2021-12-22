@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 25%;
+        height: 500px;
+        border-radius: 10px;
+        background-color: aqua;
+        margin: auto;
+        margin-top: 7%;
+        display:grid;
+        grid-template-rows:repeat(5,90px);
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 2%;
+        grid-template-areas: 
+        "in in in "
+        "one two three"
+        "four five six"
+        "seven eight nine"
+        "zer cl cl";
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+     }
+    .container>div{
+        
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        text-align: center;
+        border: none;
+        background-color: ;
+       
+
+    }
+   
+    div:nth-child(1n){
+        grid-area: in;
+       
+     
+    }
+     div:nth-child(2n){
+        grid-area: one;
+
+    }
+     div:nth-child(3n){
+        grid-area: two;
+
+    }
+     div:nth-child(4n){
+        grid-area: three;
+
+    }
+     div:nth-child(5n){
+        grid-area: four;
+
+    }
+     div:nth-child(6n){
+        grid-area: five;
+
+    }
+     div:nth-child(7n){
+    grid-area: six;
+
+    }
+    div:nth-child(8n){
+    grid-area: seven;
+
+    }
+    div:nth-child(9n){
+    grid-area: eight;
+
+    }
+    div:nth-child(10n){
+    grid-area: nine;
+    
+
+    }
+    div:nth-child(11n){
+    grid-area: zer;
+
+    }
+    div:nth-child(12n){
+    grid-area: cl;
+    background-color: cr;
+    background-color: crimson
+    ;
+
+    }
+    input{
+        padding: 7% 30%;
+        border-radius: 10px;
+    }
+    button{
+        background-color: transparent;
+        padding: 15px 35px;
+       border: transparent;
+    }
+
+
+
+
+
+</style>
+
+
+<body>
+
+    <div class="container">
+        <div>
+          <h1></h1>
+        </div>
+        <div><button onclick="in1('1')"><h2>1</h2></button></div>
+        <div><button onclick="in1('2')"><h2>2</h2></button></div>
+        <div><button onclick="in1('3')"><h2>3</h2></button></div>
+        <div><button onclick="in1('4')"><h2>4</h2></button></div>
+        <div><button onclick="in1('5')"><h2>5</h2></button></div>
+        <div><button onclick="in1('6')"><h2>6</h2></button></div>
+        <div><button onclick="in1('7')"><h2>7</h2></button></div>
+        <div><button onclick="in1('8')"><h2>8</h2></button></div>
+        <div><button onclick="in1('9')"><h2>9</h2></button></div>
+        <div><button onclick="in1('0')"><h2>0</h2></button></div>
+        <div><button onclick="incl()"><h1>clear</h1></button></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var rev = "";
+function in1(num){
+    rev = rev + num ;
+
+    document.querySelector("h1").textContent=rev
+
+}
+function incl() {
+    rev=""
+    document.querySelector("h1").textContent=rev
+}
+
+</script>

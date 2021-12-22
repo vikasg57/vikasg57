@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: Verdana,Geneva, Tahoma, sans-serif;
+        background-color: #EDF6E5;
+    }
+    h1{
+        color: skyblue;
+    }
+    .container{
+        display: flex;  
+    }
+    .left{
+        width: 35%;
+       
+        height: auto;
+        margin-left: 50px;
+    }
+    .right{
+        margin-left: 100px;   
+    }
+    select{
+        padding: 5px 100px;
+        border: 2px solid gray;
+         margin-top: 10px;
+         border-radius: 10px;
+         
+        
+    }
+    tr{
+        border-bottom: 3px solid gray;
+    }
+
+    
+    #tbody td{
+        border-bottom: 2px solid gray;
+        font-size: 20px;
+        text-align: center;
+
+    }
+    .table th{
+        border-bottom: 3px solid gray;
+        width: 100px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    input{
+        padding: 5px 74px;
+        border: 2px solid gray;
+        margin-top: 10px;
+         border-radius: 10px;
+        
+    }
+    textarea{
+        border: 2px solid gray;
+        margin-top: 10px;
+        padding: 20px 44px ;
+        border-radius: 10px;
+
+    }
+
+    #sub{
+        background-color: rgb(60,114,213);
+        padding: 10px 20px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    label{
+       font-size: 22px;
+       
+    }
+
+    
+
+</style>
+<body>
+<div class="container">
+    <div class="left">
+
+        <h1>Add Product</h1>
+        <hr>
+        <form action="
+        ">
+        <table >
+            <tr>
+                <td>
+                    <label for="">Category</label>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                 <select name="" id="cat">
+                    <option value="electronics">electronics</option>
+                    <option value="furniture">furniture</option>
+                    <option value="home appliance">home appliance</option>
+                    <option value="books">books</option>
+                 </select>
+                </td>
+            </tr>
+            <tr><td><label for="">Title</label></td></tr>
+            <tr><td><input type="text" id="title"  placeholder="title"></td></tr>
+            <tr><td><label for="">Description</label></td></tr>
+            <tr><td><textarea name="" id="des" cols="28" rows="4"></textarea></td></tr>
+            <tr><td><label for="">Price</label></td></tr>
+            <tr><td><input type="number" id="price" ></td></tr>
+            <tr><td><input type="submit" id="sub"></td></tr>
+        </table>
+    </form>
+    </div>
+   <div class="right">
+
+    <h1>
+        Product Info
+    </h1>
+    <hr>
+       <table class="table">
+         <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+
+          </tr>
+          <tbody id="tbody">
+
+          </tbody>
+       </table>
+
+    </div>
+</div>
+    
+</body>
+</html>
+
+<script>
+   document.querySelector('form').addEventListener('submit',additems) 
+   var arr = JSON.parse(localStorage.getItem("todo")) || [];
+   // var arr = []
+   displaytable(arr);
+
+   function additems(event){
+       event.preventDefault();
+       var cat = document.querySelector('#cat').value
+       var title = document.querySelector('#title').value
+       var des = document.querySelector('#des').value
+       var price = document.querySelector('#price').value
+        
+       var data={
+           cat : cat,
+           title:title,
+           des:des,
+           price:price,
+       };
+       arr.push(data)
+       localStorage.setItem("todo",JSON.stringify(arr)) 
+       displaytable(arr)    
+   }
+   function displaytable(arr){
+       var count = 1
+       document.querySelector('#tbody').innerHTML=""
+       arr.map(function(el){
+        var row=document.createElement('tr')
+      
+        var td1=document.createElement('td')
+        td1.textContent=count
+      
+        var td2 = document.createElement('td')
+        td2.textContent = el.cat
+        
+        var td3 = document.createElement('td')
+        td3.textContent = el.title
+    
+        var td4 = document.createElement('td')
+        td4.textContent = el.des
+     
+        var td5 = document.createElement('td')
+        td5.textContent = el.price
+    
+        row.append(td1, td2,td3,td4,td5);
+        var body = document.querySelector("#tbody").append(row)
+        count++
+       })
+   }
+</script>

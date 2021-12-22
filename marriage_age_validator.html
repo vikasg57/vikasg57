@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    *{
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+    div{
+        width: 35%;
+        border: 2px solid transparent;
+        margin: auto;
+        text-align: center;
+        margin-top: 10%;
+        background-color: pink;
+        border-radius: 15px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+       
+
+        
+    }
+    select,input{
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+    button{
+        background-color: darkgreen;
+        color: white;
+        border-radius: 10px;
+        padding: 5px 40px;
+    }
+    
+
+
+</style>
+<body>
+<div>
+    <h1>MARRIAGE AGE CALCULATOR</h1>
+     <input type="number" placeholder="DOB">  
+      <select name="" id="">
+         <option value="male">M</option>
+         <option value="female">F</option>
+      </select> 
+<button onclick="checkage()"> CHECK </button>
+<h2></h2>
+</div>
+
+</body>
+</html>
+<script>
+    function checkage(){
+        var dob=document.querySelector("input").value
+        var gender = document.querySelector("select").value
+        var age = 2021-dob
+         if(gender=="male" && age>21){
+             alert("YOUR ELIGIBLE FOR MARRIAGE")
+         }
+        else if(gender=="male" && age<21){
+             alert("YOU ARE NOT ELIGIBLE FOR MARRAGE")
+        }
+        
+        else if (gender == "female" && age>18) {
+             alert("YOUR ELIGIBLE FOR MARRIAGE")
+        }
+         
+        else if (gender == "female" && age<18) {
+            alert("YOU ARE NOT ELIGIBLE FOR MARRAGE")
+        }
+        else{
+            alert("YOU ARE JUST ELIGIBLE FOR MARRAGE")
+        }
+
+    }
+</script>

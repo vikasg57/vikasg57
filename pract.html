@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .cont{
+        display: flex;
+
+    }
+</style>
+<body>
+    
+    <div class="cont">
+        <form action="" id="form">
+              <div>
+                <input type="" name="" id="name">
+
+              </div>  
+              <div>
+                <input type="number" id="weight">
+              </div> 
+               <div>
+                <input type="submit">
+               </div> 
+
+        </form>
+    </div>
+    <div>
+        <table>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener('submit',display)
+    var arr=JSON.parse(localStorage.getItem("arr"))||[]
+    table(arr)
+
+    function display(event){
+        event.preventDefault()
+
+    //    console.log(form.name.value)
+
+    var data ={
+        name: form.name.value,
+        weight:form.weight.value
+    }
+    arr.push(data)
+
+    localStorage.setItem("arr",JSON.stringify(arr))
+    console.log(arr)
+
+    
+       table(arr) 
+
+    }
+
+    function table(arr){
+        document.querySelector("tbody").textContent=""
+
+        arr.map(function(el,i){
+              var row = document.createElement('tr')
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td')
+            td1.textContent =el.name
+            td2.textContent=el.weight
+            
+            var but=document.createElement('button')
+            but.innerHTML="delete"
+            td3 = but
+            row.append(td1,td2,td3)
+
+            document.querySelector("tbody").append(row)
+
+            but.addEventListener('click', function(el){
+                deleteitem(i)
+            })
+
+
+        })
+
+        function deleteitem(i){
+            arr.splice(i,1);
+            localStorage.setItem("arr",JSON.stringify(arr))
+            table(arr)
+        }
+      
+
+    }
+
+    
+</script>
