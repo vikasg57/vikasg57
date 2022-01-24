@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>karlo</title>
+</head>
+<style>
+
+    *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+    }
+    .main{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 5%;
+
+    }
+    input{
+        margin-top: 10%;
+        padding:0px 30px;
+
+    }
+    textarea{
+        margin-top: 10%;
+
+    }
+  
+    .main>div{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        
+       
+    }
+
+    table{
+        margin-top: 5%;
+        width:500px;
+
+
+
+    }
+    td,th{
+        border:2px solid black;
+        text-align: center;
+
+
+    }
+    th{
+        background-color: cornflowerblue ;
+    }
+    label{
+       
+
+    }
+    .sub{
+        background-color: cornflowerblue;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 30px;
+        color: white;
+        cursor: pointer;
+
+    }
+    #form{
+        text-align: center;
+        line-height: 30px;
+
+    }
+
+    
+</style>
+<body>
+    <div class="main">
+    <div>
+        <form action="" id="form" >
+
+            <label for="">ticket category:</label>
+            <div><select name="" id="cat">
+                <option value="">...</option>
+                <option value="refund" >refund</option>
+                <option value="item">item</option>
+                <option value="missing">missing</option>
+                <option value="status">order status</option>
+                <option value="delivery">delivery</option>
+                <option value="feedback">feedback</option>
+            </select></div>
+            <div><textarea name="" id="des" cols="30" rows="5" placeholder="ticket description"></textarea></div>
+            <div><input type="date" id="date" placeholder="date"></div>
+            <div><input type="number" id="num" placeholder="ticket number"></div>
+            <div><input type="submit" class="sub"></div>
+
+
+        </form>
+    </div>
+    <div>
+
+        <h3>sort by ticket no.</h3>
+        <select name="" id="sort" onchange="sortout()">
+            <option value="">...</option>
+            <option value="low">low to high</option>
+            <option value="high">high to low</option>
+
+        </select>
+        <h3>filter by category</h3>
+        <select name="" id="filter" onchange="filterout()">
+            <option value="">...</option>
+            <option value="refund">refund</option>
+            <option value="item">item</option>
+            <option value="missing">missing</option>
+            <option value="status">order status</option>
+            <option value="delivery">delivery</option>
+            <option value="feedback">feedback</option>
+            
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        category
+                    </th>
+                    <th>
+                        description
+                    </th>
+                    <th>
+                        date
+                    </th>
+                   <th>
+                       ticket no.
+                   </th>
+                
+
+                </tr>
+
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    </div>
+
+    
+</body>
+</html>
+<script>
+
+    var karlo =JSON.parse(localStorage.getItem("karlo")) || []
+
+    document.querySelector("form").addEventListener('submit',additem)
+    displaytable(karlo)
+
+    function additem(event){
+        event.preventDefault()
+
+        var data={
+            cat:form.cat.value,
+            des:form.des.value,
+            date:form.date.value,
+            num:form.num.value
+        }
+
+        karlo.push(data)
+        localStorage.setItem("karlo",JSON.stringify(karlo))
+
+        displaytable(karlo)
+
+    }
+
+    function displaytable(karlo){
+        document.querySelector("tbody").textContent=""
+
+        karlo.map(function(el){
+
+            var row = document.createElement('tr')
+            var td1 = document.createElement('td')
+            var td2 = document.createElement('td')
+            var td3 = document.createElement('td')
+            var td4 = document.createElement('td')
+
+            td1.textContent=el.cat;
+            td2.textContent=el.des;
+            td3.textContent=el.date;
+            td4.textContent=el.num;
+
+            row.append(td1,td2,td3,td4)
+            document.querySelector("tbody").append(row)
+
+
+           
+
+        })
+
+
+
+    }
+
+      function sortout() {
+            var select = document.querySelector("#sort").value
+            console.log(select)
+
+            if (select == "low") {
+                karlo.sort(function (a, b) {
+                    return a.num - b.num
+                })
+            }
+
+
+            if (select == "high") {
+              karlo.sort(function (a, b) {
+                  return b.num - a.num
+              })
+          }
+
+            displaytable(karlo)
+        }
+
+        function filterout(){
+
+  
+            var selected=document.querySelector("#filter").value
+            console.log(selected)
+           
+
+            var fill =karlo.filter(function(el){
+                // return selected ==el.cat;
+                return selected == el.cat
+            })
+                 console.log(fill)
+            displaytable(fill)
+        }
+
+
+
+
+
+
+</script>
