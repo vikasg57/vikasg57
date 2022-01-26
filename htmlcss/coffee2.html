@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffee grid</title>
+<style>
+    .container{
+       display: grid;
+       grid-template-rows: repeat(3,230px);
+       grid-template-columns: repeat(3,1fr);
+       grid-gap: 20px;
+       background-color:  #f4f0ee;
+    }
+
+    .container>div{
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        margin-top: 2%; 
+    }
+    .container>div>div{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: auto auto;
+        
+        padding: 15px;
+    }
+    .sub>p:nth-child(1){
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+         font-size: 25px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-left: 25px;
+    }
+    .sub>p:nth-child(2){
+        color: #b58734;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+    .sub+div>p{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-left: 25px;
+        color: gray;
+    
+    }
+    
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="sub">
+              <p>cappuccino </p>
+              <p> $49 </p>
+            </div>
+            <div>
+               <p>
+                 Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+               </p>
+            </div>
+        </div>
+        <div>
+            <div class="sub">
+                <p>Americano</p>
+                <p> $49 </p>
+            </div>
+            <div>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+                </p>
+            </div>
+        </div>
+        <div><div class="sub">
+            <p>Espresso</p>
+            <p> $49 </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+            </p>
+        </div></div>
+        <div><div class="sub">
+            <p>Macchiato</p>
+            <p> $49 </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+            </p>
+        </div></div>
+        <div><div class="sub">
+            <p>Mocha</p>
+            <p> $49 </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+            </p>
+        </div></div>
+        <div><div class="sub">
+            <p>Coffee Latte</p>
+            <p> $49 </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+            </p>
+        </div></div>
+        <div><div class="sub">
+            <p>Piccolo Latte</p>
+            <p> $49 </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+            </p>
+        </div></div>
+        <div><div class="sub">
+            <p>Ristretto </p>
+            <p> $49 </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+            </p>
+        </div></div>
+        <div><div class="sub">
+            <p>Affogato</p>
+            <p> $49 </p>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur laudantium deleniti culpa rem dignissimos? Praesentium, quaerat.
+            </p>
+        </div></div>
+    </div>
+</body>
+</html>
