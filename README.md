@@ -20,8 +20,10 @@
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vikasg57&theme=highcontrast)
 
-<p>&nbsp;<img align="left" src="https://github-readme-stats.vercel.app/api?username=vikasg57&show_icons=true&locale=en" alt="vikasg57" /></p>
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=vikasg57&show_icons=true&theme=highcontrast)
 
+<!-- <p>&nbsp;<img align="left" src="https://github-readme-stats.vercel.app/api?username=vikasg57&show_icons=true&locale=en" alt="vikasg57" /></p>
+ -->
 <p><img align="left" src="https://github-readme-streak-stats.herokuapp.com/?user=vikasg57&" alt="vikasg57" /></p>
                                                                                                          
                                                                                                            
