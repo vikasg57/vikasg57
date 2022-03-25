@@ -92,14 +92,12 @@
 <br>
 
 <p align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=vikasg57&&theme=highcontrast" alt="vikasg57" /></p>
-  <b>Note:</b> Top languages is only a metric of the languages my public code consists of and doesn't reflect experience or skill level.
+<!--   <b>Note:</b> Top languages is only a metric of the languages my public code consists of and doesn't reflect experience or skill level. -->
 
 
 <br/>
-<br/>
-<img alt="vikas's Activity Graph" src="https://activity-graph.herokuapp.com/graph?username=vikasg57&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" />
+<!-- <img alt="vikas's Activity Graph" src="https://activity-graph.herokuapp.com/graph?username=vikasg57&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" /> -->
 
-<br/>
 <br/>
 
 ## Contact Me ☎️
