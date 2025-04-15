@@ -16,7 +16,7 @@
     <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Hi.gif" width="40px" />
   </a>
 </h1>
-<h2 align="center">I'm Vikas Gaikwad, a Full-Stack Web Developer 👨‍💻 🚀</h2>  
+<h2 align="center">I'm Vikas Gaikwad, a Backend Developer 👨‍💻 🚀</h2>  
   <br/>
 <br/>
 <br/>
